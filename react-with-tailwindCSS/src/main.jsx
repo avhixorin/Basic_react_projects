@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <App />
       <Card userName="avhi" btnTxt="Click Me"/>
-      <Card userName="xorin" />
+      <Card userName="xorin" btnTxt="Visit Me" />
 
     </>
     
