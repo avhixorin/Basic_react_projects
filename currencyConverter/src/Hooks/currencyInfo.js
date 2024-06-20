@@ -16,10 +16,10 @@ const useCurrencyInfo = (currency) => {
                     throw new Error('Network response was not ok');
                 }
                 const jsonRes = await response.json();
-                console.log(jsonRes)
+                
                 if (isMounted) {
                     const conversionRates = jsonRes.conversion_rates;
-                    console.log(conversionRates)
+                    
                     setData(conversionRates);
                     setLoading(false);
                 }
@@ -37,7 +37,7 @@ const useCurrencyInfo = (currency) => {
             isMounted = false;
         };
     }, [currency]);
-    console.log(data)
+    
     return { data, loading, error };
 };
 
