@@ -7,9 +7,10 @@ function App() {
   const [to, setTo] = useState('INR')
   const [convertedAmount, setConvertedAmount] = useState(0)
 
-  const currencyInfo = useCurrencyInfo(from.toUpperCase())
+  const currencyInfo = useCurrencyInfo(from)
 
-  const options = Object.keys(currencyInfo)
+  const options = Object.keys(currencyInfo.data)
+  
 
   const swap = () => {
     setFrom(to)
@@ -17,7 +18,7 @@ function App() {
   }
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to])
+    setConvertedAmount(amount * currencyInfo.data[to])
   }
   return (
     <div className="h-screen w-100vw bg-page-bg bg-cover bg-center flex flex-col justify-center items-center">
