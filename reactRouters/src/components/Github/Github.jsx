@@ -7,7 +7,7 @@ function Github() {
         fetch('https://api.github.com/users/avhixorin')
         .then(Response => Response.json())
         .then(data => {
-            console.log(data);
+
             setData(data)
         })
     },[])
