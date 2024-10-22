@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState, useRef } from 'react';
 
 function App() {
   const [length, setLength] = useState(8);
+  const [btnTxt,setBtnTxt] = useState('Copy');
   const [numAllowed, setNumAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState('');
@@ -28,9 +29,9 @@ function App() {
   const copyToClip = () => {
     if (password) {
       navigator.clipboard.writeText(password);
-      copyBtnRef.current.innerHTML = 'Copied!';
+      setBtnTxt('Copied');
       setTimeout(() => {
-        copyBtnRef.current.innerHTML = 'Copy';
+        setBtnTxt('Copy');
       }, 2000);
     }
   };
@@ -53,7 +54,7 @@ function App() {
             ref={copyBtnRef}
             disabled={!password}
           >
-            Copy
+            {btnTxt}
           </button>
         </div>
         <div className='w-full h-1/2 flex justify-center items-center'>
